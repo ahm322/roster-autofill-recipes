@@ -52,6 +52,11 @@ Salary people should work betweek 40 and 45 hours per week. Also don't ever make
 
 ```{"scorers":[{"type":"employee_totals","score":10,"params":{"employee_property_name":"Agreement.ContractObject.BasePayRuleObject.RemunerationType","employee_property_match":"2","employee_property_match_type":"eq","compare_value":40,"compare_type":"ge","compare_total":"TotalTime"}},{"type":"employee_totals","score":-20,"params":{"employee_property_name":"Agreement.ContractObject.BasePayRuleObject.RemunerationType","employee_property_match":"2","employee_property_match_type":"eq","compare_value":45,"compare_type":"ge","compare_total":"TotalTime"}},{"type":"field_matches","score":0,"name":"morning_shifts","params":[{"field":"Shift.StartTimeQ.Hour","data":12,"type":"lt"}]},{"type":"field_matches","score":0,"name":"late_shifts","params":[{"field":"Shift.StartTimeQ.Hour","data":18,"type":"ge"}]},{"type":"overlap","score":-10,"params":{"rules":["morning_shifts","late_shifts"],"column":"Shift.Employee"}}]}```
 
+# EXAMPLE 2
+
+Salary people should work betweek 40 and 45 hours per week. Also don't ever make people work during early morning and late afternoon regardless of their stress profiles
+
+```{"scorers":[{"type":"employee_totals","score":10,"params":{"employee_property_name":"trainingRecord.trainingName","employee_property_match":"10 to 15 Hrs","employee_property_match_type":"eq","compare_value":10,"compare_type":"ge","compare_total":"TotalTime"}},{"type":"employee_totals","score":-20,"params":{"employee_property_name":"trainingRecord.trainingName","employee_property_match":"10 to 15 Hrs","employee_property_match_type":"eq","compare_value":15,"compare_type":"ge","compare_total":"TotalTime"}}]}```
 
 
 More examples to follow but feel free to contact 
